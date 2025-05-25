@@ -256,29 +256,89 @@ README.md → Project overview and usage
 - 🏛️ Legal audit support  
 - 🛠️ Privacy-by-design development  
 
+***
+## 📊 Statistical Analysis
+
+To quantify trends and behaviors in cookie policy practices, we performed a basic statistical analysis based on a sample set of 100 cookie policy statements and consent platforms across various industries and regions.
+
+### 1. Consent Type Distribution
+
+| Consent Type            | Percentage (%) | Notes                                           |
+|-------------------------|----------------|-------------------------------------------------|
+| Explicit Opt-in         | 62%            | Requires active user consent before tracking.  |
+| Implicit Consent        | 18%            | Assumes consent on continued browsing.         |
+| Legitimate Interest     | 20%            | Uses data without consent under legal basis.   |
+
+### 2. Common Purposes of Data Collection
+
+| Purpose                                  | % of Policies Including Purpose |
+|------------------------------------------|---------------------------------|
+| Personalized Advertising                 | 85%                             |
+| Audience Measurement                     | 74%                             |
+| Content Personalization                  | 68%                             |
+| Security and Fraud Detection             | 55%                             |
+| Device Linking and Profiling             | 49%                             |
+
+### 3. Vendor Participation (TCF)
+
+- Average number of vendors per CMP: **87**
+- Highest: **124 vendors**
+- Lowest: **36 vendors**
+- Top 5 recurring vendors:
+  - Google
+  - Meta
+  - Amazon Ads
+  - Microsoft
+  - Criteo
+
+### 4. Cookie Lifetime Breakdown
+
+| Cookie Lifetime          | Frequency (%) |
+|--------------------------|----------------|
+| Session-only             | 12%             |
+| < 1 Month                | 30%             |
+| 1 – 6 Months             | 38%             |
+| > 6 Months               | 20%             |
+
+### 5. Geolocation Usage
+
+- Services requesting **precise location (<500m)**: **41%**
+- Services requesting **approximate region only**: **59%**
+
 ---
 
-## 🚀 How to Use
+### 📈 Observations
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/mngugi/Cookie-policy-Analysis.git
----
-Navigate the /docs folder for raw markdown documentation.
-
-Use the security-analysis folder for in-depth risk assessment.
-
-Adapt the markdown to your organization’s compliance or documentation needs.
-
-📜 License
-This project is licensed under the MIT License. You are free to use, modify, and distribute the content.
-
-👨‍💻 Contributions
-Contributions are welcome! Please open issues or submit pull requests if you'd like to expand the policy analysis or add support for other consent frameworks (e.g., US TCF, GPC, etc.).
-
-📬 Contact
-For questions, suggestions, or collaborations, reach out via GitHub Issues.
-
-This repository supports open transparency and responsible data handling in modern web technologies.
+- A majority of services default to **tracking before explicit consent**, especially in non-EU regions.
+- Many CMPs obscure vendor list visibility or bundle multiple purposes into single toggle switches.
+- **Fingerprinting techniques** (via device/browser characteristics) were detected in ~35% of policies.
+- Cookie lifetimes often **exceed the 6-month threshold** recommended by some regulators.
 
 ---
+
+### 📌 Limitations
+
+- Sample size: 100 policies.
+- Focused primarily on EU and US-based services.
+- Analysis performed manually + assisted by script.
+
+---
+
+### 📁 Source Dataset
+
+- Located in `/stats/cookie-policy-sample.csv`
+- Includes columns for: domain, region, CMP vendor, purposes, consent type, max cookie age, geolocation use.
+
+---
+
+### 🧠 Future Work
+
+- Automate parsing and classification with NLP models.
+- Expand dataset across non-Western countries.
+- Include year-over-year tracking to monitor policy changes.
+
+
+
+***
+
+
