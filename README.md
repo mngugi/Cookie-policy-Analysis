@@ -1,4 +1,4 @@
-# Cookie-policy-Analysis
+# Cookie-Policy-Analysis
 
 # 📄 Cookie Policy Analysis: Manage Your Data
 
